@@ -1,0 +1,40 @@
+@use "../abstracts" as abs;
+/* ================================= */
+/*  QUIÉNES SOMOS (solo si usas .page-about) */
+/* ================================= */
+.page-about {
+  main > article > h1 {
+    text-align: left;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+  }
+
+  main > article > p {
+    max-width: 62ch;
+    color: rgba(255, 255, 255, 0.86);
+  }
+
+  main > article > section > h2 {
+    font-weight: 750;
+    letter-spacing: -0.02em;
+  }
+
+  main > article > section > article {
+    align-items: center; /* alinea foto + nombre mejor en mobile */
+  }
+
+  main > article > section > article > h3 {
+    font-weight: 750;
+    letter-spacing: -0.01em;
+  }
+
+  main > article > section > article figure img {
+    width: 4.25rem;
+    height: 4.25rem;
+  }
+
+  main > article > section > article > p {
+    color: rgba(255, 255, 255, 0.82);
+    line-height: 1.65;
+  }
+}

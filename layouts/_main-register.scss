@@ -1,0 +1,101 @@
+@use "../abstracts" as abs;
+/* ================================= */
+/*            REGISTRO (mobile)      */
+/* ================================= */
+.page-register {
+  min-height: 100dvh;
+  background: abs.$dark;
+  color: abs.$white;
+}
+
+.register-card {
+  position: relative;
+  margin-top: 1.25rem;
+  padding: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.03);
+  overflow: hidden;
+}
+
+.register-card::before {
+  content: "";
+  position: absolute;
+  inset: -2rem -2rem auto -2rem;
+  height: 6rem;
+  background: radial-gradient(closest-side, rgba(255,255,255,0.10), transparent 70%);
+  pointer-events: none;
+}
+
+.register-card > h1 {
+  font-size: clamp(1.9rem, 6vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin: 0 0 0.35rem;
+}
+
+.register-card > p {
+  margin: 0 0 1rem;
+  max-width: 60ch;
+  color: rgba(255, 255, 255, 0.86);
+  line-height: 1.65;
+}
+
+/* Form layout */
+.register form {
+  display: grid;
+  gap: 0.85rem;
+}
+
+/* Cada bloque label+input (tus <p>) */
+.register form > p {
+  margin: 0;
+  display: grid;
+  gap: 0.35rem;
+}
+
+/* Labels */
+.register label {
+  font-size: 0.95rem;
+  font-weight: 650;
+  color: rgba(255, 255, 255, 0.90);
+}
+
+/* Inputs / textarea */
+.register input,
+.register textarea {
+  width: 100%;
+  padding: 0.75rem 0.85rem;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(0, 0, 0, 0.22);
+  color: rgba(255, 255, 255, 0.92);
+  outline: none;
+}
+
+.register textarea {
+  resize: vertical;
+  min-height: 7.5rem;
+}
+
+/* Placeholder (por si lo usas) */
+.register input::placeholder,
+.register textarea::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* Focus accesible */
+.register input:focus-visible,
+.register textarea:focus-visible {
+  border-color: rgba(255, 255, 255, 0.28);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.10);
+}
+
+/* Botonera */
+.register form > p:last-child {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 0.25rem;
+}

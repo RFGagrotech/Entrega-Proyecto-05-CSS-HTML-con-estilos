@@ -1,0 +1,1099 @@
+@charset "UTF-8";
+/*Colores*/
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+p, h1, h2, h3, span, button, label {
+  color: white;
+  font-family: "Inter", sans-serif;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+  background-color: #151515;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+ul, ol {
+  list-style: none;
+  font-family: "Inter", sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* ================================= */
+/*               BUTTONS / CTAs      */
+/* ================================= */
+/* Botón hamburguesa */
+.nav-toggle {
+  width: 2.75rem;
+  height: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.04);
+  display: grid;
+  place-items: center;
+  gap: 0.3rem;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.nav-toggle span {
+  display: block;
+  width: 1.4rem;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 2px;
+}
+.nav-toggle:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.6);
+  outline-offset: 2px;
+}
+
+/* Menú desplegable (depende del botón hamburguesa) */
+.header-nav {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  top: calc(100% + 0.5rem);
+  background: rgba(11, 18, 32, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  padding: 0.5rem;
+  opacity: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+.header-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+}
+.header-nav li {
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+.header-nav a,
+.header-nav li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.85rem 0.85rem;
+  color: rgba(255, 255, 255, 0.92);
+  text-decoration: none;
+  font-size: 0.95rem;
+  line-height: 1;
+}
+.header-nav a:hover,
+.header-nav a:focus-visible {
+  background: rgba(255, 255, 255, 0.08);
+}
+.header-nav ul > li:first-child {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.site-header:focus-within .header-nav {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* ================================= */
+/*      CTA base (reutilizable)      */
+/* ================================= */
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  margin-top: 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.08);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+
+.cta:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.24);
+  transform: translateY(-1px);
+}
+
+.cta:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.65);
+  outline-offset: 3px;
+}
+
+/* ================================= */
+/*   CTAs “sin clases” (por layout)  */
+/* ================================= */
+/* Home: CTA del bloque Discover (tu “p con a”) */
+.home-discover p:last-of-type a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1rem;
+  margin-top: 0.75rem;
+  border-radius: 0.9rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.home-discover p:last-of-type a::before {
+  content: "";
+}
+
+.home-discover p:last-of-type a::after {
+  content: "→";
+  opacity: 0.8;
+}
+
+.home-discover p:last-of-type a:hover,
+.home-discover p:last-of-type a:focus-visible {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Cards Home (cursos + news) */
+.home-course article a,
+.home-news article a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: 0.85rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.home-course article a::after,
+.home-news article a::after {
+  content: "→";
+  opacity: 0.85;
+}
+
+.home-course article a:hover,
+.home-news article a:hover,
+.home-course article a:focus-visible,
+.home-news article a:focus-visible {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ================================= */
+/*    Botones dentro de páginas      */
+/* ================================= */
+/* Cursos: “Ver curso” (enlace con estética botón) */
+.courses > section:nth-of-type(2) > article a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 0.85rem;
+  border-radius: 999px;
+  font-weight: 750;
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  text-decoration: none;
+}
+
+.courses > section:nth-of-type(2) > article a::after {
+  content: "→";
+  opacity: 0.9;
+}
+
+.courses > section:nth-of-type(2) > article a:hover,
+.courses > section:nth-of-type(2) > article a:focus-visible {
+  background: rgba(255, 255, 255, 0.16);
+  text-decoration: none;
+}
+
+.courses > section:nth-of-type(2) > article a:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.55);
+  outline-offset: 2px;
+}
+
+/* Blog: botón del listado (“ver post”) */
+.blog > section:nth-of-type(2) > article a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.75rem;
+  padding: 0.55rem 0.85rem;
+  border-radius: 999px;
+  font-weight: 750;
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  text-decoration: none;
+}
+
+.blog > section:nth-of-type(2) > article a::after {
+  content: "↗";
+  opacity: 0.85;
+}
+
+.blog > section:nth-of-type(2) > article a:hover,
+.blog > section:nth-of-type(2) > article a:focus-visible {
+  background: rgba(255, 255, 255, 0.16);
+  text-decoration: none;
+}
+
+.blog > section:nth-of-type(2) > article a:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.55);
+  outline-offset: 2px;
+}
+
+/* Curso: CTA a target blank (consultoría) */
+.course p a[target=_blank] {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.65rem 0.95rem;
+  border-radius: 999px;
+  font-weight: 750;
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  text-decoration: none;
+}
+
+.course p a[target=_blank]::after {
+  content: "↗";
+  opacity: 0.85;
+}
+
+.course p a[target=_blank]:hover,
+.course p a[target=_blank]:focus-visible {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.course p a[target=_blank]:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.55);
+  outline-offset: 2px;
+}
+
+/* Curso: link “normal” del texto (aquí) */
+.course p a:not([target=_blank]) {
+  font-weight: 750;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.course p a:not([target=_blank]):hover,
+.course p a:not([target=_blank]):focus-visible {
+  text-decoration-thickness: 2px;
+}
+
+/* Formularios: botones principales */
+.register button,
+.login button,
+.contact button {
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.95);
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.register button:hover,
+.register button:focus-visible,
+.login button:hover,
+.login button:focus-visible,
+.contact button:hover,
+.contact button:focus-visible {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+/* Formularios: reset como secundario */
+.register input[type=reset],
+.login input[type=reset],
+.contact input[type=reset] {
+  width: auto;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+/* Ajuste: file input no rompa estética */
+.register input[type=file] {
+  padding: 0.55rem 0.85rem;
+}/*# sourceMappingURL=index.css.map */ 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px dashed rgba(255, 255, 255, 0.18);
+}
+
+main > article > section > h2 {
+  font-size: 1.35rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Cards de profes (los <article> dentro del <section>) */
+main > article > section > article {
+  margin-top: 0.85rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+  display: grid;
+  grid-template-columns: 4rem 1fr;
+  grid-template-areas: "img name" "img text";
+  gap: 0.25rem 0.85rem;
+  align-items: start;
+}
+
+main > article > section > article > h3 {
+  grid-area: name;
+  font-size: 1.05rem;
+  margin: 0;
+  padding-bottom: 0.25rem;
+}
+
+main > article > section > article figure {
+  grid-area: img;
+  margin: 0;
+}
+
+main > article > section > article figure img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 999px;
+  object-fit: cover;
+  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+main > article > section > article > p {
+  grid-area: text;
+  margin: 0;
+}
+
+/* Un poco más de “layout editorial” cuando hay espacio */
+@media (min-width: 48rem) {
+  .post-article {
+    padding: 2rem;
+  }
+  .post-figure {
+    margin-top: 1.25rem;
+  }
+  /* Si quieres imagen algo más “hero” */
+  .post-figure img {
+    border-radius: 1.25rem;
+  }
+}
+/* En desktop, centra el artículo y limita el ancho para lectura cómoda */
+@media (min-width: 64rem) {
+  .post-article p {
+    max-width: 76ch;
+  }
+}
+/* Un poco más de aire en pantallas medianas */
+@media (min-width: 48rem) {
+  .course > section {
+    padding: 2rem;
+  }
+  .course h1 {
+    margin-bottom: 1rem;
+  }
+  .course p + p {
+    margin-top: 1.1rem;
+  }
+}
+/* Un pelín más de aire cuando hay espacio */
+@media (min-width: 30rem) {
+  .blog > section:nth-of-type(2) > article {
+    padding: 1.15rem;
+  }
+  .blog > section:nth-of-type(2) > article p:first-of-type {
+    -webkit-line-clamp: 6;
+  }
+}
+/* ================================= */
+/*  Pequeña mejora cuando hay espacio */
+/* ================================= */
+@media (min-width: 30rem) {
+  main > section {
+    padding: 1.5rem;
+  }
+  .home-news article p:first-of-type {
+    -webkit-line-clamp: 5;
+  }
+  .home-course article,
+  .home-news article {
+    padding: 1.15rem;
+  }
+  main > article {
+    padding: 1.5rem;
+  }
+  main > article > section > article {
+    padding: 1.15rem;
+    grid-template-columns: 4.5rem 1fr;
+  }
+  main > article > section > article figure img {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+}
+/* Grid automático de cards cuando hay más ancho */
+@media (min-width: 44rem) {
+  main > article > section {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+  }
+  main > article > section > h2 {
+    grid-column: 1/-1;
+  }
+  main > article > section > article {
+    margin-top: 0; /* lo gestiona el gap */
+  }
+}
+@media (min-width: 60rem) {
+  main > article > section {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+/* ================================= */
+/*             BLOG (mobile)         */
+/* ================================= */
+.page-blog {
+  min-height: 100dvh;
+  background: #010101;
+  color: #fff;
+}
+
+/* Hero del blog: 1ª section */
+.blog > section:first-child h1 {
+  font-size: clamp(1.9rem, 6vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin: 0 0 0.35rem;
+}
+
+.blog > section:first-child p {
+  margin: 0;
+  max-width: 60ch;
+  color: rgba(255, 255, 255, 0.86);
+  line-height: 1.65;
+}
+
+/* Listado de posts: 2ª section */
+.blog > section:nth-of-type(2) h2 {
+  font-size: 1.35rem;
+  margin: 0 0 1rem; /* más aire bajo "Últimas noticias" */
+  text-align: left;
+}
+
+/* Espaciado y estilo de cada artículo */
+.blog > section:nth-of-type(2) > article {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+}
+
+.blog > section:nth-of-type(2) > article h3 {
+  font-size: 1.05rem;
+  margin: 0 0 0.5rem;
+}
+
+.blog > section:nth-of-type(2) > article p:first-of-type {
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.84);
+  /* preview más limpio (recorta texto) */
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ================================= */
+/*            CONTACTO (mobile)      */
+/* ================================= */
+.page-contact {
+  min-height: 100dvh;
+  background: #010101;
+  color: #fff;
+}
+
+.contact > h1 {
+  font-size: clamp(1.9rem, 6vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin: 0 0 0.35rem;
+}
+
+.contact > p {
+  margin: 0 0 1rem;
+  max-width: 60ch;
+  color: rgba(255, 255, 255, 0.86);
+  line-height: 1.65;
+}
+
+/* Card del formulario: usa tu section ya existente */
+.contact-card {
+  position: relative;
+  margin-top: 1.25rem;
+  padding: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.03);
+  overflow: hidden;
+}
+
+.contact-card::before {
+  content: "";
+  position: absolute;
+  inset: -2rem -2rem auto -2rem;
+  height: 6rem;
+  background: radial-gradient(closest-side, rgba(255, 255, 255, 0.1), transparent 70%);
+  pointer-events: none;
+}
+
+/* FORM */
+.contact form {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.contact form > p {
+  margin: 0;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.contact label {
+  font-size: 0.95rem;
+  font-weight: 650;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.contact input,
+.contact textarea {
+  width: 100%;
+  padding: 0.75rem 0.85rem;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(0, 0, 0, 0.22);
+  color: rgba(255, 255, 255, 0.92);
+  outline: none;
+}
+
+.contact textarea {
+  resize: vertical;
+  min-height: 8rem;
+}
+
+.contact input:focus-visible,
+.contact textarea:focus-visible {
+  border-color: rgba(255, 255, 255, 0.28);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+}
+
+/* Botonera */
+.contact form > p:last-child {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 0.25rem;
+}
+
+/* MAPA */
+.contact-map {
+  position: relative;
+  margin-top: 1.25rem;
+  padding: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.03);
+  overflow: hidden;
+}
+
+.contact-map::before {
+  content: "";
+  position: absolute;
+  inset: -2rem -2rem auto -2rem;
+  height: 6rem;
+  background: radial-gradient(closest-side, rgba(255, 255, 255, 0.1), transparent 70%);
+  pointer-events: none;
+}
+
+.contact-map h2 {
+  font-size: 1.35rem;
+  margin: 0 0 0.75rem;
+  text-align: center;
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 18rem; /* mobile friendly */
+  border: 0;
+  border-radius: 1rem;
+  display: block;
+}
+
+/* ================================= */
+/*            CURSOS (mobile)        */
+/* ================================= */
+.page-courses {
+  min-height: 100dvh;
+  background: #010101;
+  color: #fff;
+}
+
+.courses > section:first-child h1 {
+  font-size: clamp(1.9rem, 6vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin: 0 0 0.35rem;
+}
+
+.courses > section:first-child p {
+  margin: 0;
+  max-width: 60ch;
+  color: rgba(255, 255, 255, 0.86);
+  line-height: 1.65;
+}
+
+/* Sección de "Últimos cursos" */
+.courses > section:nth-of-type(2) h2 {
+  font-size: 1.35rem;
+  margin: 0 0 0.5rem;
+}
+
+.courses > section:nth-of-type(2) > p {
+  margin: 0 0 1.25rem; /* separación extra entre h2/p y las cards */
+  color: rgba(255, 255, 255, 0.84);
+}
+
+/* Cards de cursos (reutilizamos estética de home-course, pero sin depender de clases) */
+.courses > section:nth-of-type(2) > article {
+  margin-top: 1rem; /* más separación entre articles */
+  padding: 1rem;
+  border-radius: 1rem;
+  background: rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+}
+
+.courses > section:nth-of-type(2) > article h3 {
+  font-size: 1.05rem;
+  margin: 0 0 0.35rem;
+}
+
+.courses > section:nth-of-type(2) > article p + p {
+  margin-top: 0.65rem;
+}
+
+/* ================================= */
+/*             LOGIN (mobile)        */
+/* ================================= */
+.page-login {
+  min-height: 100dvh;
+  background: #010101;
+  color: #fff;
+}
+
+.login-card {
+  position: relative;
+  margin-top: 1.25rem;
+  padding: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.03);
+  overflow: hidden;
+}
+
+.login-card::before {
+  content: "";
+  position: absolute;
+  inset: -2rem -2rem auto -2rem;
+  height: 6rem;
+  background: radial-gradient(closest-side, rgba(255, 255, 255, 0.1), transparent 70%);
+  pointer-events: none;
+}
+
+.login-card > h1 {
+  font-size: clamp(1.9rem, 6vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin: 0 0 0.35rem;
+}
+
+.login-card > p {
+  margin: 0 0 1rem;
+  max-width: 60ch;
+  color: rgba(255, 255, 255, 0.86);
+  line-height: 1.65;
+}
+
+/* Form layout */
+.login form {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.login form > p {
+  margin: 0;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.login label {
+  font-size: 0.95rem;
+  font-weight: 650;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.login input {
+  width: 100%;
+  padding: 0.75rem 0.85rem;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(0, 0, 0, 0.22);
+  color: rgba(255, 255, 255, 0.92);
+  outline: none;
+}
+
+.login input:focus-visible {
+  border-color: rgba(255, 255, 255, 0.28);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+}
+
+/* Botonera */
+.login form > p:last-child {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 0.25rem;
+}
+
+/* ================================= */
+/*            REGISTRO (mobile)      */
+/* ================================= */
+.page-register {
+  min-height: 100dvh;
+  background: #010101;
+  color: #fff;
+}
+
+.register-card {
+  position: relative;
+  margin-top: 1.25rem;
+  padding: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.03);
+  overflow: hidden;
+}
+
+.register-card::before {
+  content: "";
+  position: absolute;
+  inset: -2rem -2rem auto -2rem;
+  height: 6rem;
+  background: radial-gradient(closest-side, rgba(255, 255, 255, 0.1), transparent 70%);
+  pointer-events: none;
+}
+
+.register-card > h1 {
+  font-size: clamp(1.9rem, 6vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin: 0 0 0.35rem;
+}
+
+.register-card > p {
+  margin: 0 0 1rem;
+  max-width: 60ch;
+  color: rgba(255, 255, 255, 0.86);
+  line-height: 1.65;
+}
+
+/* Form layout */
+.register form {
+  display: grid;
+  gap: 0.85rem;
+}
+
+/* Cada bloque label+input (tus <p>) */
+.register form > p {
+  margin: 0;
+  display: grid;
+  gap: 0.35rem;
+}
+
+/* Labels */
+.register label {
+  font-size: 0.95rem;
+  font-weight: 650;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Inputs / textarea */
+.register input,
+.register textarea {
+  width: 100%;
+  padding: 0.75rem 0.85rem;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(0, 0, 0, 0.22);
+  color: rgba(255, 255, 255, 0.92);
+  outline: none;
+}
+
+.register textarea {
+  resize: vertical;
+  min-height: 7.5rem;
+}
+
+/* Placeholder (por si lo usas) */
+.register input::placeholder,
+.register textarea::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* Focus accesible */
+.register input:focus-visible,
+.register textarea:focus-visible {
+  border-color: rgba(255, 255, 255, 0.28);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+}
+
+/* Botonera */
+.register form > p:last-child {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 0.25rem;
+}
+
+/* ================================= */
+/*  QUIÉNES SOMOS (solo si usas .page-about) */
+/* ================================= */
+.page-about main > article > h1 {
+  text-align: left;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+.page-about main > article > p {
+  max-width: 62ch;
+  color: rgba(255, 255, 255, 0.86);
+}
+.page-about main > article > section > h2 {
+  font-weight: 750;
+  letter-spacing: -0.02em;
+}
+.page-about main > article > section > article {
+  align-items: center; /* alinea foto + nombre mejor en mobile */
+}
+.page-about main > article > section > article > h3 {
+  font-weight: 750;
+  letter-spacing: -0.01em;
+}
+.page-about main > article > section > article figure img {
+  width: 4.25rem;
+  height: 4.25rem;
+}
+.page-about main > article > section > article > p {
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.65;
+}
+
+/* ================================= */
+/*          AVISO LEGAL (mobile)     */
+/* ================================= */
+.page-legal {
+  min-height: 100dvh;
+  background: #010101;
+  color: #fff;
+}
+
+/* Main wrapper (opcional, por consistencia) */
+.legal {
+  width: min(90rem, 100% - 4rem);
+  margin: 0 auto;
+  padding: 1.25rem 0 2.5rem;
+}
+
+/* Card principal */
+.legal-article {
+  position: relative;
+  margin-top: 1.25rem;
+  padding: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.03);
+  overflow: hidden;
+}
+
+.legal-article::before {
+  content: "";
+  position: absolute;
+  inset: -2rem -2rem auto -2rem;
+  height: 6rem;
+  background: radial-gradient(closest-side, rgba(255, 255, 255, 0.1), transparent 70%);
+  pointer-events: none;
+}
+
+/* Tipografía / jerarquía */
+.legal-article h1 {
+  font-size: clamp(1.85rem, 6vw, 2.6rem);
+  font-weight: 850;
+  letter-spacing: -0.03em;
+  margin: 0 0 0.75rem;
+}
+
+.legal-article p {
+  margin: 0.85rem 0 0;
+  max-width: none;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+/* Secciones (h2) */
+.legal-article h2 {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px dashed rgba(255, 255, 255, 0.18);
+  font-size: clamp(1.15rem, 3.8vw, 1.35rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* “Barra” visual a la izquierda del h2 */
+.legal-article h2 {
+  position: relative;
+  padding-left: 0.75rem;
+}
+
+.legal-article h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.35rem;
+  width: 3px;
+  height: 1.15em;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* Enlaces dentro del texto (si los añades luego) */
+.legal-article a {
+  color: rgba(255, 255, 255, 0.92);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.legal-article a:hover,
+.legal-article a:focus-visible {
+  text-decoration-thickness: 2px;
+}
+
+/* Un pelín más de aire cuando hay espacio */
+@media (min-width: 48rem) {
+  .legal-article {
+    padding: 2rem;
+  }
+  .legal-article h1 {
+    margin-bottom: 1rem;
+  }
+  .legal-article h2 {
+    margin-top: 1.75rem;
+  }
+}
+footer {
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.18);
+}
+
+footer p {
+  width: min(68.75rem, 100% - 2rem);
+  margin: 0 auto;
+  padding: 1.25rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+.copy-r {
+  color: rgba(255, 255, 255, 0.78);
+  white-space: nowrap;
+}
+
+footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 0.75rem;
+  border-radius: 0.85rem;
+  color: rgba(255, 255, 255, 0.92);
+  text-decoration: none;
+  font-weight: 650;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+footer a::after {
+  content: "↗";
+  opacity: 0.8;
+  font-size: 0.95em;
+}
+
+footer a:hover,
+footer a:focus-visible {
+  background: rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+}
+
+footer a:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.55);
+  outline-offset: 2px;
+}
+
+/* Si el footer se queda en dos líneas en móviles muy estrechos */
+@media (max-width: 22.5rem) {
+  footer p {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  footer a {
+    width: fit-content;
+  }
+}/*# sourceMappingURL=index.css.map */

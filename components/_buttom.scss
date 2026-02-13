@@ -1,0 +1,322 @@
+@use "../abstracts/" as abs;
+/* ================================= */
+/*               BUTTONS / CTAs      */
+/* ================================= */
+
+/* Botón hamburguesa */
+.nav-toggle {
+  width: 2.75rem;
+  height: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.04);
+  display: grid;
+  place-items: center;
+  gap: 0.3rem;
+  padding: 0.5rem;
+  cursor: pointer;
+
+  span {
+    display: block;
+    width: 1.4rem;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 2px;
+  }
+
+  &:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.6);
+    outline-offset: 2px;
+  }
+}
+
+/* Menú desplegable (depende del botón hamburguesa) */
+.header-nav {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  top: calc(100% + 0.5rem);
+  background: rgba(11, 18, 32, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  padding: 0.5rem;
+  opacity: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+  transition: opacity 160ms ease, transform 160ms ease;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+  }
+
+  li {
+    border-radius: 0.75rem;
+    overflow: hidden;
+  }
+
+  a,
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.85rem 0.85rem;
+    color: rgba(255, 255, 255, 0.92);
+    text-decoration: none;
+    font-size: 0.95rem;
+    line-height: 1;
+  }
+
+  a:hover,
+  a:focus-visible {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  ul > li:first-child {
+    background: rgba(255, 255, 255, 0.06);
+  }
+}
+
+.site-header:focus-within .header-nav {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* ================================= */
+/*      CTA base (reutilizable)      */
+/* ================================= */
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  margin-top: 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.08);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+
+.cta:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.24);
+  transform: translateY(-1px);
+}
+
+.cta:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.65);
+  outline-offset: 3px;
+}
+
+/* ================================= */
+/*   CTAs “sin clases” (por layout)  */
+/* ================================= */
+
+/* Home: CTA del bloque Discover (tu “p con a”) */
+.home-discover p:last-of-type a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1rem;
+  margin-top: 0.75rem;
+  border-radius: 0.9rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.home-discover p:last-of-type a::before {
+  content: "";
+}
+
+.home-discover p:last-of-type a::after {
+  content: "→";
+  opacity: 0.8;
+}
+
+.home-discover p:last-of-type a:hover,
+.home-discover p:last-of-type a:focus-visible {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Cards Home (cursos + news) */
+.home-course article a,
+.home-news article a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: 0.85rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.home-course article a::after,
+.home-news article a::after {
+  content: "→";
+  opacity: 0.85;
+}
+
+.home-course article a:hover,
+.home-news article a:hover,
+.home-course article a:focus-visible,
+.home-news article a:focus-visible {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ================================= */
+/*    Botones dentro de páginas      */
+/* ================================= */
+
+/* Cursos: “Ver curso” (enlace con estética botón) */
+.courses > section:nth-of-type(2) > article a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 0.85rem;
+  border-radius: 999px;
+  font-weight: 750;
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  text-decoration: none;
+}
+
+.courses > section:nth-of-type(2) > article a::after {
+  content: "→";
+  opacity: 0.9;
+}
+
+.courses > section:nth-of-type(2) > article a:hover,
+.courses > section:nth-of-type(2) > article a:focus-visible {
+  background: rgba(255, 255, 255, 0.16);
+  text-decoration: none;
+}
+
+.courses > section:nth-of-type(2) > article a:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.55);
+  outline-offset: 2px;
+}
+
+/* Blog: botón del listado (“ver post”) */
+.blog > section:nth-of-type(2) > article a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.75rem;
+  padding: 0.55rem 0.85rem;
+  border-radius: 999px;
+  font-weight: 750;
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  text-decoration: none;
+}
+
+.blog > section:nth-of-type(2) > article a::after {
+  content: "↗";
+  opacity: 0.85;
+}
+
+.blog > section:nth-of-type(2) > article a:hover,
+.blog > section:nth-of-type(2) > article a:focus-visible {
+  background: rgba(255, 255, 255, 0.16);
+  text-decoration: none;
+}
+
+.blog > section:nth-of-type(2) > article a:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.55);
+  outline-offset: 2px;
+}
+
+/* Curso: CTA a target blank (consultoría) */
+.course p a[target="_blank"] {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.65rem 0.95rem;
+  border-radius: 999px;
+  font-weight: 750;
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  text-decoration: none;
+}
+
+.course p a[target="_blank"]::after {
+  content: "↗";
+  opacity: 0.85;
+}
+
+.course p a[target="_blank"]:hover,
+.course p a[target="_blank"]:focus-visible {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.course p a[target="_blank"]:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.55);
+  outline-offset: 2px;
+}
+
+/* Curso: link “normal” del texto (aquí) */
+.course p a:not([target="_blank"]) {
+  font-weight: 750;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.course p a:not([target="_blank"]):hover,
+.course p a:not([target="_blank"]):focus-visible {
+  text-decoration-thickness: 2px;
+}
+
+/* Formularios: botones principales */
+.register button,
+.login button,
+.contact button {
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.10);
+  color: rgba(255, 255, 255, 0.95);
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.register button:hover,
+.register button:focus-visible,
+.login button:hover,
+.login button:focus-visible,
+.contact button:hover,
+.contact button:focus-visible {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+/* Formularios: reset como secundario */
+.register input[type="reset"],
+.login input[type="reset"],
+.contact input[type="reset"] {
+  width: auto;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+/* Ajuste: file input no rompa estética */
+.register input[type="file"] {
+  padding: 0.55rem 0.85rem;
+}

@@ -1,0 +1,163 @@
+@use "../abstracts" as abs;
+
+/*================================*/
+/*          MOBILE-FIRST          */
+/*================================*/
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: abs.$dark;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0.75rem 1rem;
+}
+
+/* Logo */
+.home-logo {
+  margin: 0;
+  display: flex;
+  align-items: center;
+
+  .logo {
+    display: block;
+    height: 3rem;
+    width: auto;
+  }
+}
+
+/* Toggle (solo mobile) */
+.nav-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Base links */
+.header-nav a {
+  font-family: inherit;
+  color: rgba(255, 255, 255, 0.88);
+  text-decoration: none;
+  transition: color 0.2s ease, background-color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+/*================================*/
+/*              IPAD              */
+/*================================*/
+@media (min-width: 48rem) {
+  .site-header {
+    padding: 1rem 1.25rem;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  /* Nav visible */
+  .header-nav {
+    display: block;
+    position: static;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .header-nav ul {
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .header-nav li {
+    margin: 0;
+  }
+
+  /* iPad: “pill” */
+  .header-nav a {
+    display: inline-block;
+    padding: 0.6rem 0.8rem;
+    border-radius: 0.75rem;
+  }
+
+  .header-nav a:hover,
+  .header-nav a:focus-visible {
+    background: rgba(255, 255, 255, 0.10);
+    color: abs.$white;
+  }
+}
+
+/*================================*/
+/*             LAPTOP             */
+/*================================*/
+@media (min-width: 64rem) {
+  /* 1) Eliminar el botón SÍ o SÍ */
+  .site-header .nav-toggle {
+    display: none;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .site-header {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+
+  /* 2) Nav visible en línea (anula el modo overlay del mobile) */
+  .site-header .header-nav {
+    display: block;
+    position: static;
+    inset: auto;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+    background: transparent ;
+    border: 0 ;
+    box-shadow: none;
+    padding: 0 ;
+    height: auto ;
+    max-height: none ;
+    overflow: visible ;
+  }
+    
+  .header-nav li,
+  .header-nav a {
+    background: transparent !important;
+  }
+
+  .site-header .header-nav ul {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  /* 3) Links “planos” tipo InfoJobs (sin pill) */
+  .site-header .header-nav a {
+    display: inline;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.88);
+    text-decoration: none;
+  }
+
+  .site-header .header-nav a:hover,
+  .site-header .header-nav a:focus-visible {
+    background: transparent;
+    color: abs.$white;
+  }
+}

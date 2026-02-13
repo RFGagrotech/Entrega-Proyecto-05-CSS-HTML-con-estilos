@@ -1,0 +1,110 @@
+@use "../abstracts" as abs;
+/* ================================= */
+/*          AVISO LEGAL (mobile)     */
+/* ================================= */
+
+.page-legal {
+  min-height: 100dvh;
+  background: abs.$dark;
+  color: abs.$white;
+}
+
+/* Main wrapper (opcional, por consistencia) */
+.legal {
+  width: min(90rem, calc(100% - 4rem));
+  margin: 0 auto;
+  padding: 1.25rem 0 2.5rem;
+}
+
+/* Card principal */
+.legal-article {
+  position: relative;
+  margin-top: 1.25rem;
+  padding: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.03);
+  overflow: hidden;
+}
+
+.legal-article::before {
+  content: "";
+  position: absolute;
+  inset: -2rem -2rem auto -2rem;
+  height: 6rem;
+  background: radial-gradient(
+    closest-side,
+    rgba(255, 255, 255, 0.10),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* Tipografía / jerarquía */
+.legal-article h1 {
+  font-size: clamp(1.85rem, 6vw, 2.6rem);
+  font-weight: 850;
+  letter-spacing: -0.03em;
+  margin: 0 0 0.75rem;
+}
+
+.legal-article p {
+  margin: 0.85rem 0 0;
+  max-width: none;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+/* Secciones (h2) */
+.legal-article h2 {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px dashed rgba(255, 255, 255, 0.18);
+  font-size: clamp(1.15rem, 3.8vw, 1.35rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* “Barra” visual a la izquierda del h2 */
+.legal-article h2 {
+  position: relative;
+  padding-left: 0.75rem;
+}
+
+.legal-article h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: calc(1.25rem + 0.1rem);
+  width: 3px;
+  height: 1.15em;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* Enlaces dentro del texto (si los añades luego) */
+.legal-article a {
+  color: rgba(255, 255, 255, 0.92);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.legal-article a:hover,
+.legal-article a:focus-visible {
+  text-decoration-thickness: 2px;
+}
+
+/* Un pelín más de aire cuando hay espacio */
+@media (min-width: 48rem) {
+  .legal-article {
+    padding: 2rem;
+  }
+
+  .legal-article h1 {
+    margin-bottom: 1rem;
+  }
+
+  .legal-article h2 {
+    margin-top: 1.75rem;
+  }
+}

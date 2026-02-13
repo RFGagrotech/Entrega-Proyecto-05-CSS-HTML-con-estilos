@@ -1,0 +1,56 @@
+@use "../abstracts" as abs;
+/* ================================= */
+/*             CURSO (mobile)        */
+/* ================================= */
+.page-course {
+  min-height: 100dvh;
+  background: abs.$dark;
+  color: abs.$white;
+}
+
+/* Ajustes del contenido del curso */
+.course > section {
+  padding: 1.5rem; /* un pelín más que el genérico */
+}
+
+/* Título + texto */
+.course h1 {
+  font-size: clamp(1.9rem, 6vw, 2.6rem);
+  font-weight: 850;
+  letter-spacing: -0.03em;
+  margin: 0 0 0.75rem;
+  text-align: left;
+}
+
+.course p {
+  margin: 0;
+  max-width: 70ch;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+/* Separación entre párrafos */
+.course p + p {
+  margin-top: 0.9rem;
+}
+/* CTA final del curso */
+.course-cta {
+  margin-top: 1.5rem;
+  max-width: 70ch;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Enlace destacado */
+.course-cta a {
+  color: abs.$white;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+  text-decoration-thickness: 2px;
+}
+
+.course-cta a:hover,
+.course-cta a:focus-visible {
+  text-decoration-thickness: 3px;
+}

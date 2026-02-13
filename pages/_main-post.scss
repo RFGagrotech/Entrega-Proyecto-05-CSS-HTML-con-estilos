@@ -1,0 +1,132 @@
+@use "../abstracts" as abs;
+/* ================================= */
+/*              POST (blog detail)   */
+/* ================================= */
+.page-post {
+  min-height: 100dvh;
+  background: abs.$dark;
+  color: abs.$white;
+}
+
+/* Contenedor del post */
+.post {
+  /* tu main ya centra y da width; esto solo afina */
+}
+
+/* Card principal del artículo */
+.post-article {
+  position: relative;
+  padding: 1.25rem;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.03);
+  overflow: hidden;
+}
+
+.post-article::before {
+  content: "";
+  position: absolute;
+  inset: -2rem -2rem auto -2rem;
+  height: 6rem;
+  background: radial-gradient(closest-side, rgba(255,255,255,0.10), transparent 70%);
+  pointer-events: none;
+}
+
+/* Tipografía del post */
+.post-article h1 {
+  font-size: clamp(1.85rem, 6vw, 2.6rem);
+  font-weight: 850;
+  letter-spacing: -0.03em;
+  margin: 0 0 0.75rem;
+}
+
+.post-article h2 {
+  font-size: clamp(1.25rem, 4vw, 1.55rem);
+  font-weight: 800;
+  margin-top: 1.25rem;
+}
+
+.post-article h3 {
+  font-size: 1.05rem;
+  font-weight: 750;
+  margin-top: 1rem;
+}
+
+/* Párrafos más legibles */
+.post-article p {
+  margin-top: 0.85rem;
+  max-width: 72ch;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+/* Imagen destacada */
+.post-figure {
+  margin: 1rem 0 0;
+}
+
+.post-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+/* Separadores suaves entre “bloques” del artículo */
+.post-article h2,
+.post-article h3 {
+  padding-bottom: 0.35rem; /* ya tienes padding-bottom global en headings */
+}
+
+/* Bloques de código (blog2) */
+pre.post-code {
+  margin: 1rem 0 0;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  overflow-x: auto;
+}
+
+pre.post-code code {
+  display: block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.92);
+  white-space: pre; /* respeta el formato */
+}
+
+.post-back,
+.post-content > p.post-code {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.80);
+}
+/* CTA de vuelta al blog */
+.post-back {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.80);
+  max-width: 72ch;
+  line-height: 1.6;
+}
+
+/* Enlace destacado */
+.post-back a {
+  color: abs.$white;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+  text-decoration-thickness: 2px;
+}
+
+.post-back a:hover,
+.post-back a:focus-visible {
+  text-decoration-thickness: 3px;
+}
