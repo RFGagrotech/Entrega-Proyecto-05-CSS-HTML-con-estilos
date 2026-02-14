@@ -55,7 +55,6 @@ footer a:focus-visible {
   outline-offset: 2px;
 }
 
-/* Si el footer se queda en dos líneas en móviles muy estrechos */
 @media (max-width: 22.5rem) {
   footer p {
     flex-direction: column;

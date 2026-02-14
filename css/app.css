@@ -31,9 +31,7 @@ button {
   cursor: pointer;
 }
 
-/*================================*/
-/*          MOBILE-FIRST          */
-/*================================*/
+/* ==== MOBILE-FIRST ==== */
 .site-header {
   position: sticky;
   top: 0;
@@ -46,7 +44,6 @@ button {
   padding: 0.75rem 1rem;
 }
 
-/* Logo */
 .home-logo {
   margin: 0;
   display: flex;
@@ -58,14 +55,12 @@ button {
   width: auto;
 }
 
-/* Toggle (solo mobile) */
 .nav-toggle {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Base links */
 .header-nav a {
   font-family: inherit;
   color: rgba(255, 255, 255, 0.88);
@@ -73,9 +68,7 @@ button {
   transition: color 0.2s ease, background-color 0.2s ease, text-decoration-color 0.2s ease;
 }
 
-/*================================*/
-/*              IPAD              */
-/*================================*/
+/* ==== IPAD ==== */
 @media (min-width: 48rem) {
   .site-header {
     padding: 1rem 1.25rem;
@@ -83,7 +76,6 @@ button {
   .nav-toggle {
     display: none;
   }
-  /* Nav visible */
   .header-nav {
     display: block;
     position: static;
@@ -106,7 +98,6 @@ button {
   .header-nav li {
     margin: 0;
   }
-  /* iPad: “pill” */
   .header-nav a {
     display: inline-block;
     padding: 0.6rem 0.8rem;
@@ -118,11 +109,8 @@ button {
     color: #fff;
   }
 }
-/*================================*/
-/*             LAPTOP             */
-/*================================*/
+/* ==== LAPTOP ==== */
 @media (min-width: 64rem) {
-  /* 1) Eliminar el botón SÍ o SÍ */
   .site-header .nav-toggle {
     display: none;
     visibility: hidden;
@@ -132,7 +120,6 @@ button {
     padding-left: 6rem;
     padding-right: 6rem;
   }
-  /* 2) Nav visible en línea (anula el modo overlay del mobile) */
   .site-header .header-nav {
     display: block;
     position: static;
@@ -160,7 +147,6 @@ button {
     padding: 0;
     list-style: none;
   }
-  /* 3) Links “planos” tipo InfoJobs (sin pill) */
   .site-header .header-nav a {
     display: inline;
     padding: 0;
@@ -175,17 +161,13 @@ button {
     color: #fff;
   }
 }
-/* ================================= */
-/*             MOBILE-FIRST          */
-/* ================================= */
-/* Helpers reutilizables (para otras páginas) */
+/* ==== MOBILE-FIRST ==== */
 .page-home {
   min-height: 100dvh;
   background: #010101;
   color: #fff;
 }
 
-/* (Opcional) si cambias el body de quienes-somos a class="page-about" */
 .page-about {
   min-height: 100dvh;
   background: #010101;
@@ -198,7 +180,6 @@ main {
   padding: 1.25rem 0 2.5rem;
 }
 
-/* Tipografía base del contenido */
 main :where(h1, h2, h3) {
   line-height: 1.1;
   letter-spacing: -0.02em;
@@ -222,7 +203,6 @@ main :where(a:hover, a:focus-visible) {
   text-underline-offset: 0.2em;
 }
 
-/* Secciones: misma estructura en todas las páginas */
 main > section {
   position: relative;
   margin-top: 1.25rem;
@@ -233,7 +213,6 @@ main > section {
   overflow: hidden;
 }
 
-/* “Glow” sutil arriba (queda muy bien en todas las páginas) */
 main > section::before {
   content: "";
   position: absolute;
@@ -244,10 +223,9 @@ main > section::before {
 }
 
 .home-greet {
-  text-align: left; /* o center si quieres look landing */
+  text-align: left;
 }
 
-/* Titulares */
 .home-greet h1 {
   font-size: clamp(1.75rem, 6vw, 2.4rem);
   margin-bottom: 0.5rem;
@@ -259,14 +237,12 @@ main > section::before {
   margin-bottom: 1rem;
 }
 
-/* HERO (greet) */
 .home-greet figure {
   margin: 0;
   display: grid;
   gap: 0.75rem;
 }
 
-/* Solo accesible para lectores de pantalla */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -289,7 +265,6 @@ main > section::before {
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
 }
 
-/* DISCOVER */
 .home-discover h2 {
   font-size: 1.35rem;
   margin-bottom: 0.5rem;
@@ -301,7 +276,6 @@ main > section::before {
   text-align: left;
 }
 
-/* CARDS (cursos + news) */
 .home-course h2,
 .home-news h2 {
   font-size: 1.35rem;
@@ -315,7 +289,6 @@ main > section::before {
   text-align: center;
 }
 
-/* Reutilizable para artículos tipo card */
 .home-course article,
 .home-news article {
   margin-top: 0.85rem;
@@ -345,7 +318,6 @@ main > section::before {
   background: rgba(255, 255, 255, 0.12);
 }
 
-/* Frase final “ver todos los cursos” */
 .course-link {
   margin-top: 1rem;
   padding-top: 0.85rem;
@@ -357,7 +329,6 @@ main > section::before {
   font-weight: 700;
 }
 
-/*      Line-clamp para previews      */
 .home-news article p:first-of-type {
   display: -webkit-box;
   -webkit-line-clamp: 4;
@@ -365,7 +336,6 @@ main > section::before {
   overflow: hidden;
 }
 
-/* Hero del artículo (título + intro) */
 main > article {
   position: relative;
   margin-top: 1.25rem;
@@ -395,7 +365,6 @@ main > article > p {
   margin-top: 0.25rem;
 }
 
-/* Sección equipo (usa tu <section> interno) */
 main > article > section {
   margin-top: 1.25rem;
   padding-top: 1rem;
@@ -407,7 +376,6 @@ main > article > section > h2 {
   margin-bottom: 0.75rem;
 }
 
-/* Cards de profes (los <article> dentro del <section>) */
 main > article > section > article {
   margin-top: 0.85rem;
   padding: 1rem;
@@ -449,7 +417,7 @@ main > article > section > article > p {
   margin: 0;
 }
 
-/* Un poco más de “layout editorial” cuando hay espacio */
+/* ==== IPAD ==== */
 @media (min-width: 48rem) {
   .post-article {
     padding: 2rem;
@@ -457,18 +425,15 @@ main > article > section > article > p {
   .post-figure {
     margin-top: 1.25rem;
   }
-  /* Si quieres imagen algo más “hero” */
   .post-figure img {
     border-radius: 1.25rem;
   }
 }
-/* En desktop, centra el artículo y limita el ancho para lectura cómoda */
 @media (min-width: 64rem) {
   .post-article p {
     max-width: 76ch;
   }
 }
-/* Un poco más de aire en pantallas medianas */
 @media (min-width: 48rem) {
   .course > section {
     padding: 2rem;
@@ -480,18 +445,11 @@ main > article > section > article > p {
     margin-top: 1.1rem;
   }
 }
-/* Un pelín más de aire cuando hay espacio */
 @media (min-width: 30rem) {
   .blog > section:nth-of-type(2) > article {
     padding: 1.15rem;
   }
-  .blog > section:nth-of-type(2) > article p:first-of-type {
-    -webkit-line-clamp: 6;
-  }
 }
-/* ================================= */
-/*  Pequeña mejora cuando hay espacio */
-/* ================================= */
 @media (min-width: 30rem) {
   main > section {
     padding: 1.5rem;
@@ -515,7 +473,6 @@ main > article > section > article > p {
     height: 4.5rem;
   }
 }
-/* Grid automático de cards cuando hay más ancho */
 @media (min-width: 44rem) {
   main > article > section {
     display: grid;
@@ -526,7 +483,7 @@ main > article > section > article > p {
     grid-column: 1/-1;
   }
   main > article > section > article {
-    margin-top: 0; /* lo gestiona el gap */
+    margin-top: 0;
   }
 }
 @media (min-width: 60rem) {
@@ -534,16 +491,13 @@ main > article > section > article > p {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
-/* ================================= */
-/*             BLOG (mobile)         */
-/* ================================= */
+/* ==== BLOG (mobile) ==== */
 .page-blog {
   min-height: 100dvh;
   background: #010101;
   color: #fff;
 }
 
-/* Hero del blog: 1ª section */
 .blog > section:first-child h1 {
   font-size: clamp(1.9rem, 6vw, 2.4rem);
   font-weight: 800;
@@ -558,14 +512,12 @@ main > article > section > article > p {
   line-height: 1.65;
 }
 
-/* Listado de posts: 2ª section */
 .blog > section:nth-of-type(2) h2 {
   font-size: 1.35rem;
-  margin: 0 0 1rem; /* más aire bajo "Últimas noticias" */
+  margin: 0 0 1rem;
   text-align: left;
 }
 
-/* Espaciado y estilo de cada artículo */
 .blog > section:nth-of-type(2) > article {
   margin-top: 1rem;
   padding: 1rem;
@@ -583,16 +535,13 @@ main > article > section > article > p {
 .blog > section:nth-of-type(2) > article p:first-of-type {
   line-height: 1.65;
   color: rgba(255, 255, 255, 0.84);
-  /* preview más limpio (recorta texto) */
   display: -webkit-box;
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-/* ================================= */
-/*            CONTACTO (mobile)      */
-/* ================================= */
+/* ==== CONTACTO (mobile) ==== */
 .page-contact {
   min-height: 100dvh;
   background: #010101;
@@ -613,7 +562,6 @@ main > article > section > article > p {
   line-height: 1.65;
 }
 
-/* Card del formulario: usa tu section ya existente */
 .contact-card {
   position: relative;
   margin-top: 1.25rem;
@@ -633,7 +581,6 @@ main > article > section > article > p {
   pointer-events: none;
 }
 
-/* FORM */
 .contact form {
   display: grid;
   gap: 0.85rem;
@@ -673,7 +620,6 @@ main > article > section > article > p {
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
 }
 
-/* Botonera */
 .contact form > p:last-child {
   display: flex;
   gap: 0.75rem;
@@ -682,7 +628,6 @@ main > article > section > article > p {
   margin-top: 0.25rem;
 }
 
-/* MAPA */
 .contact-map {
   position: relative;
   margin-top: 1.25rem;
@@ -710,15 +655,13 @@ main > article > section > article > p {
 
 .contact-map iframe {
   width: 100%;
-  height: 18rem; /* mobile friendly */
+  height: 18rem;
   border: 0;
   border-radius: 1rem;
   display: block;
 }
 
-/* ================================= */
-/*            CURSOS (mobile)        */
-/* ================================= */
+/* ==== CURSOS (mobile) ==== */
 .page-courses {
   min-height: 100dvh;
   background: #010101;
@@ -739,20 +682,18 @@ main > article > section > article > p {
   line-height: 1.65;
 }
 
-/* Sección de "Últimos cursos" */
 .courses > section:nth-of-type(2) h2 {
   font-size: 1.35rem;
   margin: 0 0 0.5rem;
 }
 
 .courses > section:nth-of-type(2) > p {
-  margin: 0 0 1.25rem; /* separación extra entre h2/p y las cards */
+  margin: 0 0 1.25rem;
   color: rgba(255, 255, 255, 0.84);
 }
 
-/* Cards de cursos (reutilizamos estética de home-course, pero sin depender de clases) */
 .courses > section:nth-of-type(2) > article {
-  margin-top: 1rem; /* más separación entre articles */
+  margin-top: 1rem;
   padding: 1rem;
   border-radius: 1rem;
   background: rgba(0, 0, 0, 0.18);
@@ -769,9 +710,7 @@ main > article > section > article > p {
   margin-top: 0.65rem;
 }
 
-/* ================================= */
-/*             LOGIN (mobile)        */
-/* ================================= */
+/* ==== LOGIN (mobile) ==== */
 .page-login {
   min-height: 100dvh;
   background: #010101;
@@ -811,7 +750,6 @@ main > article > section > article > p {
   line-height: 1.65;
 }
 
-/* Form layout */
 .login form {
   display: grid;
   gap: 0.85rem;
@@ -844,7 +782,6 @@ main > article > section > article > p {
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
 }
 
-/* Botonera */
 .login form > p:last-child {
   display: flex;
   gap: 0.75rem;
@@ -853,9 +790,7 @@ main > article > section > article > p {
   margin-top: 0.25rem;
 }
 
-/* ================================= */
-/*            REGISTRO (mobile)      */
-/* ================================= */
+/* ==== REGISTRO (mobile) ==== */
 .page-register {
   min-height: 100dvh;
   background: #010101;
@@ -895,27 +830,23 @@ main > article > section > article > p {
   line-height: 1.65;
 }
 
-/* Form layout */
 .register form {
   display: grid;
   gap: 0.85rem;
 }
 
-/* Cada bloque label+input (tus <p>) */
 .register form > p {
   margin: 0;
   display: grid;
   gap: 0.35rem;
 }
 
-/* Labels */
 .register label {
   font-size: 0.95rem;
   font-weight: 650;
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* Inputs / textarea */
 .register input,
 .register textarea {
   width: 100%;
@@ -932,20 +863,17 @@ main > article > section > article > p {
   min-height: 7.5rem;
 }
 
-/* Placeholder (por si lo usas) */
 .register input::placeholder,
 .register textarea::placeholder {
   color: rgba(255, 255, 255, 0.55);
 }
 
-/* Focus accesible */
 .register input:focus-visible,
 .register textarea:focus-visible {
   border-color: rgba(255, 255, 255, 0.28);
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
 }
 
-/* Botonera */
 .register form > p:last-child {
   display: flex;
   gap: 0.75rem;
@@ -954,9 +882,7 @@ main > article > section > article > p {
   margin-top: 0.25rem;
 }
 
-/* ================================= */
-/*  QUIÉNES SOMOS (solo si usas .page-about) */
-/* ================================= */
+/* ==== QUIÉNES SOMOS ==== */
 .page-about main > article > h1 {
   text-align: left;
   font-weight: 800;
@@ -971,7 +897,7 @@ main > article > section > article > p {
   letter-spacing: -0.02em;
 }
 .page-about main > article > section > article {
-  align-items: center; /* alinea foto + nombre mejor en mobile */
+  align-items: center;
 }
 .page-about main > article > section > article > h3 {
   font-weight: 750;
@@ -986,23 +912,19 @@ main > article > section > article > p {
   line-height: 1.65;
 }
 
-/* ================================= */
-/*          AVISO LEGAL (mobile)     */
-/* ================================= */
+/* ==== AVISO LEGAL (mobile) ==== */
 .page-legal {
   min-height: 100dvh;
   background: #010101;
   color: #fff;
 }
 
-/* Main wrapper (opcional, por consistencia) */
 .legal {
   width: min(90rem, 100% - 4rem);
   margin: 0 auto;
   padding: 1.25rem 0 2.5rem;
 }
 
-/* Card principal */
 .legal-article {
   position: relative;
   margin-top: 1.25rem;
@@ -1022,7 +944,6 @@ main > article > section > article > p {
   pointer-events: none;
 }
 
-/* Tipografía / jerarquía */
 .legal-article h1 {
   font-size: clamp(1.85rem, 6vw, 2.6rem);
   font-weight: 850;
@@ -1037,7 +958,6 @@ main > article > section > article > p {
   color: rgba(255, 255, 255, 0.86);
 }
 
-/* Secciones (h2) */
 .legal-article h2 {
   margin-top: 1.5rem;
   padding-top: 1.25rem;
@@ -1047,7 +967,6 @@ main > article > section > article > p {
   letter-spacing: -0.02em;
 }
 
-/* “Barra” visual a la izquierda del h2 */
 .legal-article h2 {
   position: relative;
   padding-left: 0.75rem;
@@ -1064,7 +983,6 @@ main > article > section > article > p {
   background: rgba(255, 255, 255, 0.35);
 }
 
-/* Enlaces dentro del texto (si los añades luego) */
 .legal-article a {
   color: rgba(255, 255, 255, 0.92);
   text-decoration: underline;
@@ -1076,7 +994,6 @@ main > article > section > article > p {
   text-decoration-thickness: 2px;
 }
 
-/* Un pelín más de aire cuando hay espacio */
 @media (min-width: 48rem) {
   .legal-article {
     padding: 2rem;
@@ -1143,7 +1060,6 @@ footer a:focus-visible {
   outline-offset: 2px;
 }
 
-/* Si el footer se queda en dos líneas en móviles muy estrechos */
 @media (max-width: 22.5rem) {
   footer p {
     flex-direction: column;
@@ -1153,21 +1069,17 @@ footer a:focus-visible {
     width: fit-content;
   }
 }
-/* ================================= */
-/*             CURSO (mobile)        */
-/* ================================= */
+/* ==== CURSO (mobile) ==== */
 .page-course {
   min-height: 100dvh;
   background: #010101;
   color: #fff;
 }
 
-/* Ajustes del contenido del curso */
 .course > section {
-  padding: 1.5rem; /* un pelín más que el genérico */
+  padding: 1.5rem;
 }
 
-/* Título + texto */
 .course h1 {
   font-size: clamp(1.9rem, 6vw, 2.6rem);
   font-weight: 850;
@@ -1183,12 +1095,10 @@ footer a:focus-visible {
   color: rgba(255, 255, 255, 0.86);
 }
 
-/* Separación entre párrafos */
 .course p + p {
   margin-top: 0.9rem;
 }
 
-/* CTA final del curso */
 .course-cta {
   margin-top: 1.5rem;
   max-width: 70ch;
@@ -1196,7 +1106,6 @@ footer a:focus-visible {
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* Enlace destacado */
 .course-cta a {
   color: #fff;
   font-weight: 600;
@@ -1210,21 +1119,13 @@ footer a:focus-visible {
   text-decoration-thickness: 3px;
 }
 
-/* ================================= */
-/*              POST (blog detail)   */
-/* ================================= */
+/* ==== POST ==== */
 .page-post {
   min-height: 100dvh;
   background: #010101;
   color: #fff;
 }
 
-/* Contenedor del post */
-.post {
-  /* tu main ya centra y da width; esto solo afina */
-}
-
-/* Card principal del artículo */
 .post-article {
   position: relative;
   padding: 1.25rem;
@@ -1243,7 +1144,6 @@ footer a:focus-visible {
   pointer-events: none;
 }
 
-/* Tipografía del post */
 .post-article h1 {
   font-size: clamp(1.85rem, 6vw, 2.6rem);
   font-weight: 850;
@@ -1263,7 +1163,6 @@ footer a:focus-visible {
   margin-top: 1rem;
 }
 
-/* Párrafos más legibles */
 .post-article p {
   margin-top: 0.85rem;
   max-width: 72ch;
@@ -1271,7 +1170,6 @@ footer a:focus-visible {
   color: rgba(255, 255, 255, 0.86);
 }
 
-/* Imagen destacada */
 .post-figure {
   margin: 1rem 0 0;
 }
@@ -1285,13 +1183,11 @@ footer a:focus-visible {
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
 }
 
-/* Separadores suaves entre “bloques” del artículo */
 .post-article h2,
 .post-article h3 {
-  padding-bottom: 0.35rem; /* ya tienes padding-bottom global en headings */
+  padding-bottom: 0.35rem;
 }
 
-/* Bloques de código (blog2) */
 pre.post-code {
   margin: 1rem 0 0;
   padding: 1rem;
@@ -1307,7 +1203,7 @@ pre.post-code code {
   font-size: 0.92rem;
   line-height: 1.55;
   color: rgba(255, 255, 255, 0.92);
-  white-space: pre; /* respeta el formato */
+  white-space: pre;
 }
 
 .post-back,
@@ -1318,7 +1214,6 @@ pre.post-code code {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* CTA de vuelta al blog */
 .post-back {
   margin-top: 1rem;
   padding-top: 1rem;
@@ -1328,7 +1223,6 @@ pre.post-code code {
   line-height: 1.6;
 }
 
-/* Enlace destacado */
 .post-back a {
   color: #fff;
   font-weight: 600;
@@ -1342,9 +1236,7 @@ pre.post-code code {
   text-decoration-thickness: 3px;
 }
 
-/* ================================= */
-/*               BUTTONS / CTAs      */
-/* ================================= */
+/* ==== BUTTONS / CTAs ==== */
 /* Botón hamburguesa */
 .nav-toggle {
   width: 2.75rem;
@@ -1370,7 +1262,7 @@ pre.post-code code {
   outline-offset: 2px;
 }
 
-/* Menú desplegable (depende del botón hamburguesa) */
+/* Menú desplegable */
 .header-nav {
   position: absolute;
   left: 1rem;
@@ -1422,9 +1314,6 @@ pre.post-code code {
   pointer-events: auto;
 }
 
-/* ================================= */
-/*      CTA base (reutilizable)      */
-/* ================================= */
 .cta {
   display: inline-flex;
   align-items: center;
@@ -1452,10 +1341,6 @@ pre.post-code code {
   outline-offset: 3px;
 }
 
-/* ================================= */
-/*   CTAs “sin clases” (por layout)  */
-/* ================================= */
-/* Home: CTA del bloque Discover (tu “p con a”) */
 .home-discover p:last-of-type a {
   display: inline-flex;
   align-items: center;
@@ -1483,7 +1368,6 @@ pre.post-code code {
   background: rgba(255, 255, 255, 0.12);
 }
 
-/* Cards Home (cursos + news) */
 .home-course article a,
 .home-news article a {
   display: inline-flex;
@@ -1510,10 +1394,7 @@ pre.post-code code {
   background: rgba(255, 255, 255, 0.12);
 }
 
-/* ================================= */
-/*    Botones dentro de páginas      */
-/* ================================= */
-/* Cursos: “Ver curso” (enlace con estética botón) */
+/* ==== Botones dentro de páginas ==== */
 .courses > section:nth-of-type(2) > article a {
   display: inline-flex;
   align-items: center;
@@ -1574,7 +1455,6 @@ pre.post-code code {
   outline-offset: 2px;
 }
 
-/* Curso: CTA a target blank (consultoría) */
 .course p a[target=_blank] {
   display: inline-flex;
   align-items: center;
@@ -1603,7 +1483,6 @@ pre.post-code code {
   outline-offset: 2px;
 }
 
-/* Curso: link “normal” del texto (aquí) */
 .course p a:not([target=_blank]) {
   font-weight: 750;
   text-decoration: underline;
@@ -1615,7 +1494,6 @@ pre.post-code code {
   text-decoration-thickness: 2px;
 }
 
-/* Formularios: botones principales */
 .register button,
 .login button,
 .contact button {

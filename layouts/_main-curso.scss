@@ -1,7 +1,6 @@
 @use "../abstracts" as abs;
-/* ================================= */
-/*            CURSOS (mobile)        */
-/* ================================= */
+
+/* ==== CURSOS (mobile) ==== */
 .page-courses {
   min-height: 100dvh;
   background: abs.$dark;
@@ -22,20 +21,18 @@
   line-height: 1.65;
 }
 
-/* Sección de "Últimos cursos" */
 .courses > section:nth-of-type(2) h2 {
   font-size: 1.35rem;
   margin: 0 0 0.5rem;
 }
 
 .courses > section:nth-of-type(2) > p {
-  margin: 0 0 1.25rem; /* separación extra entre h2/p y las cards */
+  margin: 0 0 1.25rem; 
   color: rgba(255, 255, 255, 0.84);
 }
 
-/* Cards de cursos (reutilizamos estética de home-course, pero sin depender de clases) */
 .courses > section:nth-of-type(2) > article {
-  margin-top: 1rem; /* más separación entre articles */
+  margin-top: 1rem; 
   padding: 1rem;
   border-radius: 1rem;
   background: rgba(0, 0, 0, 0.18);

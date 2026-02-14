@@ -1,8 +1,6 @@
 @use "../abstracts" as abs;
 
-/*================================*/
-/*          MOBILE-FIRST          */
-/*================================*/
+/* ==== MOBILE-FIRST ==== */
 
 .site-header {
   position: sticky;
@@ -18,7 +16,6 @@
   padding: 0.75rem 1rem;
 }
 
-/* Logo */
 .home-logo {
   margin: 0;
   display: flex;
@@ -31,14 +28,12 @@
   }
 }
 
-/* Toggle (solo mobile) */
 .nav-toggle {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Base links */
 .header-nav a {
   font-family: inherit;
   color: rgba(255, 255, 255, 0.88);
@@ -46,9 +41,8 @@
   transition: color 0.2s ease, background-color 0.2s ease, text-decoration-color 0.2s ease;
 }
 
-/*================================*/
-/*              IPAD              */
-/*================================*/
+/* ==== IPAD ==== */
+
 @media (min-width: 48rem) {
   .site-header {
     padding: 1rem 1.25rem;
@@ -58,7 +52,6 @@
     display: none;
   }
 
-  /* Nav visible */
   .header-nav {
     display: block;
     position: static;
@@ -84,7 +77,6 @@
     margin: 0;
   }
 
-  /* iPad: “pill” */
   .header-nav a {
     display: inline-block;
     padding: 0.6rem 0.8rem;
@@ -98,11 +90,9 @@
   }
 }
 
-/*================================*/
-/*             LAPTOP             */
-/*================================*/
+/* ==== LAPTOP ==== */
+
 @media (min-width: 64rem) {
-  /* 1) Eliminar el botón SÍ o SÍ */
   .site-header .nav-toggle {
     display: none;
     visibility: hidden;
@@ -114,7 +104,6 @@
     padding-right: 6rem;
   }
 
-  /* 2) Nav visible en línea (anula el modo overlay del mobile) */
   .site-header .header-nav {
     display: block;
     position: static;
@@ -145,7 +134,6 @@
     list-style: none;
   }
 
-  /* 3) Links “planos” tipo InfoJobs (sin pill) */
   .site-header .header-nav a {
     display: inline;
     padding: 0;

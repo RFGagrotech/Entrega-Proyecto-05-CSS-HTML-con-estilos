@@ -1,7 +1,6 @@
 @use "../abstracts" as abs;
-/* ================================= */
-/*  QUIÉNES SOMOS (solo si usas .page-about) */
-/* ================================= */
+
+/* ==== QUIÉNES SOMOS ==== */
 .page-about {
   main > article > h1 {
     text-align: left;
@@ -20,7 +19,7 @@
   }
 
   main > article > section > article {
-    align-items: center; /* alinea foto + nombre mejor en mobile */
+    align-items: center; 
   }
 
   main > article > section > article > h3 {

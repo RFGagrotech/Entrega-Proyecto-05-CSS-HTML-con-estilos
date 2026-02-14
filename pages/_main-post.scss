@@ -1,19 +1,12 @@
 @use "../abstracts" as abs;
-/* ================================= */
-/*              POST (blog detail)   */
-/* ================================= */
+
+/* ==== POST ==== */
 .page-post {
   min-height: 100dvh;
   background: abs.$dark;
   color: abs.$white;
 }
 
-/* Contenedor del post */
-.post {
-  /* tu main ya centra y da width; esto solo afina */
-}
-
-/* Card principal del artículo */
 .post-article {
   position: relative;
   padding: 1.25rem;
@@ -32,7 +25,6 @@
   pointer-events: none;
 }
 
-/* Tipografía del post */
 .post-article h1 {
   font-size: clamp(1.85rem, 6vw, 2.6rem);
   font-weight: 850;
@@ -52,7 +44,6 @@
   margin-top: 1rem;
 }
 
-/* Párrafos más legibles */
 .post-article p {
   margin-top: 0.85rem;
   max-width: 72ch;
@@ -60,7 +51,6 @@
   color: rgba(255, 255, 255, 0.86);
 }
 
-/* Imagen destacada */
 .post-figure {
   margin: 1rem 0 0;
 }
@@ -74,13 +64,11 @@
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
 }
 
-/* Separadores suaves entre “bloques” del artículo */
 .post-article h2,
 .post-article h3 {
-  padding-bottom: 0.35rem; /* ya tienes padding-bottom global en headings */
+  padding-bottom: 0.35rem; 
 }
 
-/* Bloques de código (blog2) */
 pre.post-code {
   margin: 1rem 0 0;
   padding: 1rem;
@@ -97,7 +85,7 @@ pre.post-code code {
   font-size: 0.92rem;
   line-height: 1.55;
   color: rgba(255, 255, 255, 0.92);
-  white-space: pre; /* respeta el formato */
+  white-space: pre; 
 }
 
 .post-back,
@@ -107,7 +95,7 @@ pre.post-code code {
   border-top: 1px dashed rgba(255, 255, 255, 0.18);
   color: rgba(255, 255, 255, 0.80);
 }
-/* CTA de vuelta al blog */
+
 .post-back {
   margin-top: 1rem;
   padding-top: 1rem;
@@ -117,7 +105,6 @@ pre.post-code code {
   line-height: 1.6;
 }
 
-/* Enlace destacado */
 .post-back a {
   color: abs.$white;
   font-weight: 600;

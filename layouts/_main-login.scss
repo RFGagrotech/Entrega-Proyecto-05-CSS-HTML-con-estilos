@@ -1,7 +1,6 @@
 @use "../abstracts" as abs;
-/* ================================= */
-/*             LOGIN (mobile)        */
-/* ================================= */
+
+/* ==== LOGIN (mobile) ==== */
 .page-login {
   min-height: 100dvh;
   background: abs.$dark;
@@ -41,7 +40,6 @@
   line-height: 1.65;
 }
 
-/* Form layout */
 .login form {
   display: grid;
   gap: 0.85rem;
@@ -74,7 +72,6 @@
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.10);
 }
 
-/* Botonera */
 .login form > p:last-child {
   display: flex;
   gap: 0.75rem;

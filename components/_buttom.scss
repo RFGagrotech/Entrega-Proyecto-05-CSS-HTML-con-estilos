@@ -1,8 +1,6 @@
 @use "../abstracts/" as abs;
-/* ================================= */
-/*               BUTTONS / CTAs      */
-/* ================================= */
 
+/* ==== BUTTONS / CTAs ==== */
 /* Botón hamburguesa */
 .nav-toggle {
   width: 2.75rem;
@@ -30,7 +28,7 @@
   }
 }
 
-/* Menú desplegable (depende del botón hamburguesa) */
+/* Menú desplegable */
 .header-nav {
   position: absolute;
   left: 1rem;
@@ -87,9 +85,6 @@
   pointer-events: auto;
 }
 
-/* ================================= */
-/*      CTA base (reutilizable)      */
-/* ================================= */
 .cta {
   display: inline-flex;
   align-items: center;
@@ -117,11 +112,6 @@
   outline-offset: 3px;
 }
 
-/* ================================= */
-/*   CTAs “sin clases” (por layout)  */
-/* ================================= */
-
-/* Home: CTA del bloque Discover (tu “p con a”) */
 .home-discover p:last-of-type a {
   display: inline-flex;
   align-items: center;
@@ -149,7 +139,6 @@
   background: rgba(255, 255, 255, 0.12);
 }
 
-/* Cards Home (cursos + news) */
 .home-course article a,
 .home-news article a {
   display: inline-flex;
@@ -176,11 +165,7 @@
   background: rgba(255, 255, 255, 0.12);
 }
 
-/* ================================= */
-/*    Botones dentro de páginas      */
-/* ================================= */
-
-/* Cursos: “Ver curso” (enlace con estética botón) */
+/* ==== Botones dentro de páginas ==== */
 .courses > section:nth-of-type(2) > article a {
   display: inline-flex;
   align-items: center;
@@ -241,7 +226,6 @@
   outline-offset: 2px;
 }
 
-/* Curso: CTA a target blank (consultoría) */
 .course p a[target="_blank"] {
   display: inline-flex;
   align-items: center;
@@ -270,7 +254,6 @@
   outline-offset: 2px;
 }
 
-/* Curso: link “normal” del texto (aquí) */
 .course p a:not([target="_blank"]) {
   font-weight: 750;
   text-decoration: underline;
@@ -282,7 +265,6 @@
   text-decoration-thickness: 2px;
 }
 
-/* Formularios: botones principales */
 .register button,
 .login button,
 .contact button {
