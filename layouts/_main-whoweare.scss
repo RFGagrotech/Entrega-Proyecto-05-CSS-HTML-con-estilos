@@ -9,7 +9,7 @@
   }
 
   main > article > p {
-    max-width: 62ch;
+    max-width: none;
     color: rgba(255, 255, 255, 0.86);
   }
 
@@ -35,5 +35,13 @@
   main > article > section > article > p {
     color: rgba(255, 255, 255, 0.82);
     line-height: 1.65;
+  }
+}
+
+@media (min-width: 44rem) and (max-width: 59.99rem) {
+  .page-about main > article > section > article:last-child {
+    grid-column: 1 / -1;   
+    justify-self: center;  
+    max-width: 26rem;      
   }
 }
